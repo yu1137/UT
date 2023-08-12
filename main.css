@@ -1,0 +1,319 @@
+:root {
+  /* Colors */
+  --black: #000000;
+  --white: #ffffff;
+  --primary: #333333;
+  --secondary: #e2e2e2;
+  --tertiary: #afafaf;
+  --negative: #e54937;
+  --underline: #cbcbcb;
+  --light-gray: #f6f6f6;
+}
+
+/* XEION CDN */
+@import url('http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+/* Pretendard CDN */
+/* @font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+} */
+@font-face {
+  font-family: 'IBMPlexSansKR-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'IBMPlexSansKR-Regular';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%; /* 1rem을 10px로 변환 */
+}
+body {
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  color: var(--primary);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+li {
+  list-style: none;
+}
+input:focus {
+  outline: none;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+  margin-top: 0;
+}
+/* Custom : Button */
+.more {
+  color: var(--black);
+  border-bottom: 1px solid var(--underline);
+  position: relative;
+  margin: auto;
+  margin-left: 0;
+  overflow: hidden;
+}
+.more:after {
+  content: '';
+  border-bottom: 1px solid var(--black);
+  position: absolute;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  transition: .2s;
+}
+.more:hover:after {
+  width: 100%;
+}
+.btn {
+  display: inline-block;
+  position: relative;
+  color: var(--white);
+  cursor: pointer;
+}
+.btn:after {
+  content: '';
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  border-radius: 1rem;
+  transition: .3s;
+  opacity: 0;
+}
+.btn:hover:after {
+  opacity: 1;
+  z-index: -1;
+}
+.btn-download {
+  display: inline-block;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 1.6rem 2.4rem;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .3s;
+}
+.btn-download:hover {
+  background-color: var(--primary);
+}
+.btn-header-lang,
+.btn-sign {
+  display: inline-block;
+  color: var(--white);
+  padding: .8rem 1.2rem;
+  text-align: center;
+  border-radius: 1.6rem;
+  cursor: pointer;
+  transition: .3s;
+}
+.btn-sign {
+  background-color: var(--white);
+  color: var(--black);
+}
+.btn-header-lang:hover {
+  background-color: var(--primary);
+}
+.btn-sign:hover {
+  background-color: var(--tertiary);
+}
+/* Main : Header */
+#header {
+  background-color: var(--black);
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+.header-inner {
+  margin: auto;
+  width: 140.8rem;
+  height: 6.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+}
+.logo-gnb {
+  display: flex;
+  align-items: center;
+  margin-left: 6.4rem;
+  gap: 2.4rem;
+}
+.logo a img {
+  width: 4rem;
+  height: 4rem;
+}
+.gnb li {
+  display: inline-block;
+  font-size: 1.4rem;
+  padding: 0 1.4rem;
+}
+.gnb li a:hover {
+  color: var(--secondary);
+}
+.gnb-sub:after {
+  content: '\e942';
+  font-family: xeicon;
+  vertical-align: middle;
+  margin-left: .4rem;
+}
+.lang-sign {
+  display: flex;
+  gap: 1.2rem;
+  margin-right: 6.4rem;
+}
+.lang:before {
+  content: '\e9d1';
+  font-family: xeicon;
+  padding-right: .4rem;
+}
+/* Section : Visual */
+#visual {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background: url(images/banner.png) no-repeat center bottom;
+  background-size: cover;
+}
+.visual-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1152px;
+  padding: 64px;
+}
+.banner {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  width: 400px;
+}
+.banner h1 {
+  font-size: 5.2rem;
+  font-weight: 700;
+}
+.appdown {
+  margin: auto;
+  margin-left: 0;
+}
+.appdown:before {
+  content: '\eb7c';
+  font-family: xeicon;
+  font-size: 20px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+/* Section : About */
+.about-inner {
+  width: 128rem;
+  margin: auto;
+}
+.about-contents {
+  display: flex;
+  gap: 3.6rem;
+  padding: 6.4rem;
+}
+.about-content {
+  padding: 6.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  width: 600px;
+  position: relative;
+}
+.about-content h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.icon-company:before {content: '\ea04';}
+.icon-news:before {content: '\ea83';}
+.icon-company:before,
+.icon-news:before {
+  font-family: xeicon;
+  font-weight: 500;
+  font-size: 3rem;
+  position: absolute;
+  top: 0;
+}
+.about-content p {
+  font-size: 1.4rem;
+}
+.about-content a {
+  margin-top: 2.4rem;
+}
+
+/* Section : Download */
+#download {
+  background-color: var(--light-gray);
+  height: 40.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.download-inner {
+  width: 115.2rem;
+}
+.download-contents {
+  margin: 6.4rem;
+}
+.download-contents h2 {
+  margin-bottom: 4.8rem;
+  font-size: 3.6rem;
+  font-weight: 700;
+  letter-spacing: .2rem;
+}
+.download-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3.6rem;
+}
+.download-app {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  width: 55.8rem;
+  padding: 4.4rem;
+  cursor: pointer;
+}
+.download-app img {
+  width: 10rem;
+  height: 10rem;
+}
+.download-app span {
+  font-size: 2.4rem;
+  font-weight: 700;
+  padding: 2.4rem 4.8rem 2.4rem 2.4rem;
+}
+.download-app i {
+  font-size: 2.4rem;
+  font-weight: 600;
+  transition: .3s;
+}
+.download-app:hover i {
+  transform: translateX(2rem);
+}
